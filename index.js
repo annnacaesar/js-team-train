@@ -534,23 +534,55 @@
 // console.log(isEqualSymbols("кот", "ток")); // выведет true
 // console.log(isEqualSymbols("кот", "тик")); // выведет false
 
-const monitors = ['SAMSUNG', 'LG', 'ASUS', 'DELL', 'BENQ', 'ASER'];
+// const monitors = ['SAMSUNG', 'LG', 'ASUS', 'DELL', 'BENQ', 'ASER'];
 
-const sortedMonitors = [...monitors].sort((a, b) => {
-  if (a < b) {
-    return 1
-  }
-  if (a > b) {
-    return -1
-  }
-  return 0
-})
-console.log(sortedMonitors);
+// const sortedMonitors = [...monitors].sort((a, b) => {
+//   if (a < b) {
+//     return 1
+//   }
+//   if (a > b) {
+//     return -1
+//   }
+//   return 0
+// })
+// console.log(sortedMonitors);
 
-console.log(monitors.sort());
+// console.log(monitors.sort());
 
+// ===========================================
 
+//Собрать в allTopics массив всех предметов всех курсов
+//Выполнить фильтрацию, оставив в uniqueTopics только уникальные элементы
 
+const courses = [
+  {
+    name: 'Basic HTML+CSS',
+    topics: ['VSCode', 'HTML', 'CSS', 'GitHub', 'GitHub Desctop'],
+  },
+  {
+    name: 'Intermediate HTML+CSS',
+    topics: ['VSCode', 'HTML', 'CSS', 'GitHub', 'Git', 'Terminal'],
+  },
+  {
+    name: 'Basic JavaScript',
+    topics: [
+      'VSCode',
+      'Type system',
+      'Loops',
+      'Function',
+      'Git',
+      'Conditions',
+      'Classes',
+      'GitHub',
+      'DOM',
+    ],
+  },
+  {
+    name: 'Intermediate JavaScript',
+    topics: ['VSCode', 'NPM', 'VSCode', 'Bundlers', 'Transpiling', 'Git', 'Promises', 'AJAX', 'GitHub'],
+  },
+];
 
-
+const unicCourses = courses.flatMap(cours => cours.topics).filter((topic, index, array) => array.indexOf(topic) === index);
+console.log(unicCourses);
 
